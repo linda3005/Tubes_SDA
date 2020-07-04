@@ -37,37 +37,37 @@ TreeNode* make_child(TreeNode *pare_node, Data datum, int isChar)
 		pare_node->isChar = isChar;
 		return pare_node;
 	}
-	if(pare_node->left && pare_node->right)
+	if(pare_node->right && pare_node->left)
 	{
 		pare_node = pare_node->parent;
 		if(!pare_node)	return NULL;
 		return make_child(pare_node, datum, isChar);
 	}
 
-	if(!isChar) // number, from right. return self node pointer.
+	if(!isChar) // number, from left. return self node pointer.
 	{
-		if(pare_node->right)
-		{
-			make_left_child(pare_node, datum, isChar);
-		}
-		else
-		{
-			make_right_child(pare_node, datum, isChar);
-		}
-		return pare_node;
-	}
-	else // operator, from left. return its child node pointer.
-	{
-
 		if(pare_node->left)
 		{
 			make_right_child(pare_node, datum, isChar);
-			return pare_node->right;
 		}
 		else
 		{
 			make_left_child(pare_node, datum, isChar);
+		}
+		return pare_node;
+	}
+	else // operator, from right. return its child node pointer.
+	{
+
+		if(pare_node->right)
+		{
+			make_left_child(pare_node, datum, isChar);
 			return pare_node->left;
+		}
+		else
+		{
+			make_right_child(pare_node, datum, isChar);
+			return pare_node->right;
 		}
 	}
 }
