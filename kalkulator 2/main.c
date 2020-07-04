@@ -2,6 +2,7 @@
 #include "Tree.h"
 #include "Stack.h"
 
+// try ((1+2)*(3-4))
 char token; // variable for reading a charactor
 Root *root;
 Stack *st;
@@ -67,6 +68,7 @@ int main()
     traversal(root, POSTORDER);
     puts("");
     printf("Evaluation result : %g\n", value);
+    puts("");
 
     /// delete
     remove_all_tree_nodes(root);
