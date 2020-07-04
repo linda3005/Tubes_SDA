@@ -35,6 +35,8 @@ int main()
 	/// make data structures for each cases
 	root = make_root_node();
 	st = make_stack();
+	
+	printf("Masukan Angka dan operasi bilangan contoh ((1+2)*(3-4)) :\n");
 
 	/// process
     token = getchar();
@@ -60,15 +62,15 @@ int main()
     /// printing
     printf("prefix : ");
     traversal(root, PREORDER);
-    puts("");
+    printf("");
     printf("infix : ");
     traversal(root, INORDER);
-    puts("");
+    printf("");
     printf("postfix : ");
     traversal(root, POSTORDER);
-    puts("");
+    printf("");
     printf("Evaluation result : %g\n", value);
-    puts("");
+    printf("");
 
     /// delete
     remove_all_tree_nodes(root);
