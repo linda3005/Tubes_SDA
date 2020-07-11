@@ -19,8 +19,6 @@ typedef union
 	char opr;
 } Data;
 
-const static Data dummy_data = {0};
-
 void Menu();
 
 #endif // COMMON_H_INCLUDED
