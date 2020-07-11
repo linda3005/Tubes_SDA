@@ -5,8 +5,8 @@
 
 typedef struct StackNode
 {
-	int isChar;
-	Data data;
+	int key;
+	Data info;
 	struct StackNode *pNode;
 } StackNode;
 
@@ -19,7 +19,7 @@ int isEmpty_stack(Stack *stack);
 StackNode* make_stack_node();
 Stack* make_stack();
 void print_stack_node(StackNode*);
-void push(Stack *stack, Data datum, int isChar);
+void push(Stack *stack, Data DataNumber, int key);
 StackNode pop(Stack *stack);
 void remove_stack(Stack *stack);
 

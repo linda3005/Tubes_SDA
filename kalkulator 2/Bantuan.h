@@ -14,10 +14,9 @@
 
 typedef union
 {
-	double num;
-	char opr;
+	double Number;
+	char Operation;
 } Data;
-
 
 
 double term();

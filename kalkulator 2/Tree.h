@@ -2,30 +2,31 @@
 #define TREE_H_INCLUDED
 #include "Bantuan.h"
 
-typedef struct TreeNode
+typedef struct NodeOfTree
 {
-	int isChar;
-	Data data;
-	struct TreeNode *parent;
-	struct TreeNode *left;
-	struct TreeNode *right;
-} TreeNode;
+	int key;
+	Data info;
+	struct NodeOfTree *parent;
+	struct NodeOfTree *left;
+	struct NodeOfTree *right;
+} NodeOfTree;
 
 typedef struct Root
 {
-	TreeNode *root;
+	NodeOfTree *root;
 } Root;
 
-Root* make_root_node();
-TreeNode* make_tree_node();
-TreeNode* make_child(TreeNode *pare_node, Data datum, int isChar);
-void make_left_child(TreeNode *pare_node, Data datum, int isChar);
-void make_right_child(TreeNode *pare_node, Data datum, int isChar);
-void print_data(Data datum, int isChar);
-void traversal(Root *root, int mode);
-void preorder_traversal(TreeNode *tNode);
-void inorder_traversal(TreeNode *tNode);
-void postorder_traversal(TreeNode *tNode);
-void remove_all_tree_nodes(Root* root);
-void remove_tree_node(TreeNode *tNode);
-#endif // TREE_H_INCLUDED
+Root* CreateRootNode();
+NodeOfTree* CreateTreeNode();
+NodeOfTree* make_child(NodeOfTree *Node, Data DataNumber, int key);
+void CreateLeftChild(NodeOfTree *Node, Data DataNumber, int key);
+void CreateRightChild(NodeOfTree *Node, Data DataNumber, int key);
+void PrintTraversal(Data DataNumber, int key);
+void AllTraversal(Root *root, int mode);
+void Preorder(NodeOfTree *TreeNode);
+void Inorder(NodeOfTree *TreeNode);
+void Postorder(NodeOfTree *TreeNode);
+void DeleteAllNodeTree(Root* root);
+void DeleteNodeTree(NodeOfTree *TreeNode);
+#endif
+

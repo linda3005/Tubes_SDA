@@ -1,6 +1,6 @@
 #include "Tree.h"
 
-Root* make_root_node()
+Root* CreateRootNode()
 {
 	Root* tmp = (Root*)calloc(sizeof(Root), 1);
 	if(!tmp) {
@@ -10,9 +10,9 @@ Root* make_root_node()
 	return tmp;
 }
 
-TreeNode* make_tree_node()
+NodeOfTree* CreateTreeNode()
 {
-	TreeNode* tmp = (TreeNode*)calloc(sizeof(TreeNode), 1);
+	NodeOfTree* tmp = (NodeOfTree*)calloc(sizeof(NodeOfTree), 1);
 	if(!tmp){
 		puts("memory is full-using.");
 		exit(1);
@@ -22,136 +22,136 @@ TreeNode* make_tree_node()
 
 /** \brief
  *
- * \param pare_node : parent node
- * \param datum : input data1
- * \param isChar : input data2
+ * \param Node : parent node
+ * \param DataNumber : input data1
+ * \param key : input data2
  * \return self node or new child node
  *
  */
-TreeNode* make_child(TreeNode *pare_node, Data datum, int isChar)
+NodeOfTree* make_child(NodeOfTree *Node, Data DataNumber, int key)
 {
-	if(!pare_node)
+	if(!Node)
 	{
-		pare_node = make_tree_node();
-		pare_node->data = datum;
-		pare_node->isChar = isChar;
-		return pare_node;
+		Node = CreateTreeNode();
+		Node->info = DataNumber;
+		Node->key = key;
+		return Node;
 	}
-	if(pare_node->left && pare_node->right)
+	if(Node->left && Node->right)
 	{
-		pare_node = pare_node->parent;
-		if(!pare_node)	return NULL;
-		return make_child(pare_node, datum, isChar);
+		Node = Node->parent;
+		if(!Node)	return NULL;
+		return make_child(Node, DataNumber, key);
 	}
 
-	if(!isChar) // number, from right. return self node pointer.
+	if(!key) // number, from right. return self node pointer.
 	{
-		if(pare_node->right)
+		if(Node->right)
 		{
-			make_left_child(pare_node, datum, isChar);
+			CreateLeftChild(Node, DataNumber, key);
 		}
 		else
 		{
-			make_right_child(pare_node, datum, isChar);
+			CreateRightChild(Node, DataNumber, key);
 		}
-		return pare_node;
+		return Node;
 	}
 	else // operator, from left. return its child node pointer.
 	{
 
-		if(pare_node->right)
+		if(Node->right)
 		{
-			make_left_child(pare_node, datum, isChar);
-			return pare_node->left;
+			CreateLeftChild(Node, DataNumber, key);
+			return Node->left;
 		}
 		else
 		{
-			make_right_child(pare_node, datum, isChar);
-			return pare_node->right;
+			CreateRightChild(Node, DataNumber, key);
+			return Node->right;
 		}
 	}
 }
 
-void make_left_child(TreeNode *pare_node, Data datum, int isChar)
+void CreateLeftChild(NodeOfTree *Node, Data DataNumber, int key)
 {
-	TreeNode* tmp = make_tree_node();
+	NodeOfTree* tmp = CreateTreeNode();
 	if(!tmp)	return;
-	tmp->data = datum;
-	tmp->isChar = isChar;
-	pare_node->left = tmp;
-	tmp->parent = pare_node;
+	tmp->info = DataNumber;
+	tmp->key = key;
+	Node->left = tmp;
+	tmp->parent = Node;
 }
 
-void make_right_child(TreeNode *pare_node, Data datum, int isChar)
+void CreateRightChild(NodeOfTree *Node, Data DataNumber, int key)
 {
-	TreeNode* tmp = make_tree_node();
+	NodeOfTree* tmp = CreateTreeNode();
 	if(!tmp)	return;
-	tmp->data = datum;
-	tmp->isChar = isChar;
-	pare_node->right = tmp;
-	tmp->parent = pare_node;
+	tmp->info = DataNumber;
+	tmp->key = key;
+	Node->right = tmp;
+	tmp->parent = Node;
 }
 
-void print_data(Data datum, int isChar)
+void PrintTraversal(Data DataNumber, int key)
 {
-	if(isChar) {
-		printf("%c", datum.opr);
+	if(key) {
+		printf("%c", DataNumber.Operation);
 	}
 	else {
-		printf("%g", datum.num);
+		printf("%g", DataNumber.Number);
 	}
 }
 
-void traversal(Root *root, int mode)
+void AllTraversal(Root *root, int mode)
 {
-	TreeNode *tmp = root->root;
+	NodeOfTree *tmp = root->root;
 	switch(mode)
 	{
 		case PREORDER:
-			preorder_traversal(tmp);
+			Preorder(tmp);
 			break;
 		case INORDER:
-			inorder_traversal(tmp);
+			Inorder(tmp);
 			break;
 		case POSTORDER:
-			postorder_traversal(tmp);
+			Postorder(tmp);
 			break;
 	}
 }
 
-void preorder_traversal(TreeNode *tNode)
+void Preorder(NodeOfTree *TreeNode)
 {
-	if(!tNode)	return;
-	print_data(tNode->data, tNode->isChar);
-	preorder_traversal(tNode->left);
-	preorder_traversal(tNode->right);
+	if(!TreeNode)	return;
+	PrintTraversal(TreeNode->info, TreeNode->key);
+	Preorder(TreeNode->left);
+	Preorder(TreeNode->right);
 }
 
-void inorder_traversal(TreeNode *tNode)
+void Inorder(NodeOfTree *TreeNode)
 {
-	if(!tNode)	return;
-	inorder_traversal(tNode->left);
-	print_data(tNode->data, tNode->isChar);
-	inorder_traversal(tNode->right);
+	if(!TreeNode)	return;
+	Inorder(TreeNode->left);
+	PrintTraversal(TreeNode->info, TreeNode->key);
+	Inorder(TreeNode->right);
 }
 
-void postorder_traversal(TreeNode *tNode)
+void Postorder(NodeOfTree *TreeNode)
 {
-	if(!tNode)	return;
-	postorder_traversal(tNode->left);
-	postorder_traversal(tNode->right);
-	print_data(tNode->data, tNode->isChar);
+	if(!TreeNode)	return;
+	Postorder(TreeNode->left);
+	Postorder(TreeNode->right);
+	PrintTraversal(TreeNode->info, TreeNode->key);
 }
 
-void remove_tree_node(TreeNode *tNode)
+void DeleteNodeTree(NodeOfTree *TreeNode)
 {
-	if(!tNode)	return;
-	remove_tree_node(tNode->left);
-	remove_tree_node(tNode->right);
-	free(tNode);
+	if(!TreeNode)	return;
+	DeleteNodeTree(TreeNode->left);
+	DeleteNodeTree(TreeNode->right);
+	free(TreeNode);
 }
 
-void remove_all_tree_nodes(Root* root)
+void DeleteAllNodeTree(Root* root)
 {
-	remove_tree_node(root->root);
+	DeleteNodeTree(root->root);
 }

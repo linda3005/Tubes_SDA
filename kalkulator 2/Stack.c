@@ -29,26 +29,26 @@ Stack* make_stack()
 	return tmp;
 }
 
-void print_stack_node(StackNode *tNode)
+void print_stack_node(StackNode *TreeNode)
 {
-	if(!tNode)	return;
-	if(tNode->isChar){
-		printf("%c", tNode->data.opr);
+	if(!TreeNode)	return;
+	if(TreeNode->key){
+		printf("%c", TreeNode->info.Operation);
 	}
 	else{
-		printf("%g", tNode->data.num);
+		printf("%g", TreeNode->info.Number);
 	}
 }
 
-void push(Stack *stack, Data datum, int isChar)
+void push(Stack *stack, Data DataNumber, int key)
 {
 	StackNode *tmp = make_stack_node();
 	if(!tmp) {
 		puts("memory is full-using.");
 		exit(1);
 	}
-	tmp->data = datum;
-	tmp->isChar = isChar;
+	tmp->info = DataNumber;
+	tmp->key = key;
 	tmp->pNode = stack->topNode;
 	stack->topNode = tmp;
 }
@@ -56,8 +56,7 @@ void push(Stack *stack, Data datum, int isChar)
 StackNode pop(Stack *stack)
 {
 	StackNode res;
-	res.data = dummy_data;
-	res.isChar = FALSE;
+	res.key = FALSE;
 	if(!stack || isEmpty_stack(stack))	return res;
 	res = *(stack->topNode);
 	StackNode *tmp = stack->topNode;
