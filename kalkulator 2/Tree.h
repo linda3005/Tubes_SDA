@@ -1,6 +1,6 @@
 #ifndef TREE_H_INCLUDED
 #define TREE_H_INCLUDED
-#include "Common.h"
+#include "Bantuan.h"
 
 typedef struct TreeNode
 {

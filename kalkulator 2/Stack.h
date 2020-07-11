@@ -1,7 +1,7 @@
 #ifndef STACK_H_INCLUDED
 #define STACK_H_INCLUDED
 
-#include "Common.h"
+#include "Bantuan.h"
 
 typedef struct StackNode
 {

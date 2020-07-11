@@ -1,7 +1,6 @@
-#ifndef COMMON_H_INCLUDED
-#define COMMON_H_INCLUDED
+#ifndef BANTUAN_H_INCLUDED
+#define BANTUAN_H_INCLUDED
 
-/// this header file is consisting of common things
 
 #include <stdlib.h>
 #include <stdio.h>
@@ -19,6 +18,14 @@ typedef union
 	char opr;
 } Data;
 
+
+
+double term();
+double sum();
+double factor();
+
+void CheckAndGetChar(char tmp);
+void GotError();
 void Menu();
 
-#endif // COMMON_H_INCLUDED
+#endif // BANTUAN_H_INCLUDED
