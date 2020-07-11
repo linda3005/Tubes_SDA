@@ -22,7 +22,6 @@ typedef union
 double term();
 double sum();
 double factor();
-
 void CheckAndGetChar(char tmp);
 void GotError();
 void Menu();

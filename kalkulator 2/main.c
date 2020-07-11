@@ -4,7 +4,7 @@
 
 
 
-char token; // variable for reading a charactor
+char token; // variable for reading a character
 Root *root;
 Stack *st;
 
@@ -14,6 +14,7 @@ Stack *st;
  */
 int main()
 {
+	
 	double value;
 	StackNode tmp;
 	NodeOfTree *tn = NULL;

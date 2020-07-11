@@ -43,10 +43,6 @@ void print_stack_node(StackNode *TreeNode)
 void push(Stack *stack, Data DataNumber, int key)
 {
 	StackNode *tmp = make_stack_node();
-	if(!tmp) {
-		puts("memory is full-using.");
-		exit(1);
-	}
 	tmp->info = DataNumber;
 	tmp->key = key;
 	tmp->pNode = stack->topNode;
