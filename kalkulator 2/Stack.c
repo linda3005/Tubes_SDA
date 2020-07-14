@@ -3,7 +3,7 @@
 int StackIsEmpty(Stack *ParameterStack)
 {
 	if(!ParameterStack) {
-		puts("the ParameterStack doesn't exist.");
+		puts("the stack doesn't exist.");
 		return TRUE;
 	}
 	return ParameterStack->topNode == NULL;

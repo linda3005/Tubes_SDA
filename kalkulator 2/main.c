@@ -27,12 +27,12 @@ int main()
 	/// process
     token = getchar();
     value = sum();
-	// now, ParameterStack is already built
+	// now, stack is already built
 
 	/// construct tree
 	while(!StackIsEmpty(st))
 	{
-		// As the ParameterStack is being removed, constructs tree
+		// As the stack is being removed, constructs tree
 		tmp = PopStackNode(st);
 		while(tmp.key)
 		{
