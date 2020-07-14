@@ -1,15 +1,15 @@
 #include "Stack.h"
 
-int isEmpty_stack(Stack *stack)
+int StackIsEmpty(Stack *ParameterStack)
 {
-	if(!stack) {
-		puts("the stack doesn't exist.");
+	if(!ParameterStack) {
+		puts("the ParameterStack doesn't exist.");
 		return TRUE;
 	}
-	return stack->topNode == NULL;
+	return ParameterStack->topNode == NULL;
 }
 
-StackNode* make_stack_node()
+StackNode* CreateStackNode()
 {
 	StackNode *tmp = (StackNode*)calloc(sizeof(StackNode), 1);
 	if(!tmp){
@@ -19,7 +19,7 @@ StackNode* make_stack_node()
 	return tmp;
 }
 
-Stack* make_stack()
+Stack* CreateStack()
 {
 	Stack *tmp = (Stack*)calloc(sizeof(Stack), 1);
 	if(!tmp) {
@@ -29,7 +29,7 @@ Stack* make_stack()
 	return tmp;
 }
 
-void print_stack_node(StackNode *TreeNode)
+void PrintStackNode(StackNode *TreeNode)
 {
 	if(!TreeNode)	return;
 	if(TreeNode->key){
@@ -40,32 +40,32 @@ void print_stack_node(StackNode *TreeNode)
 	}
 }
 
-void push(Stack *stack, Data DataNumber, int key)
+void PushStackNode(Stack *ParameterStack, Data DataNumber, int key)
 {
-	StackNode *tmp = make_stack_node();
+	StackNode *tmp = CreateStackNode();
 	tmp->info = DataNumber;
 	tmp->key = key;
-	tmp->pNode = stack->topNode;
-	stack->topNode = tmp;
+	tmp->pNode = ParameterStack->topNode;
+	ParameterStack->topNode = tmp;
 }
 
-StackNode pop(Stack *stack)
+StackNode PopStackNode(Stack *ParameterStack)
 {
 	StackNode res;
 	res.key = FALSE;
-	if(!stack || isEmpty_stack(stack))	return res;
-	res = *(stack->topNode);
-	StackNode *tmp = stack->topNode;
-	stack->topNode = tmp->pNode;
+	if(!ParameterStack || StackIsEmpty(ParameterStack))	return res;
+	res = *(ParameterStack->topNode);
+	StackNode *tmp = ParameterStack->topNode;
+	ParameterStack->topNode = tmp->pNode;
 	free(tmp);
 	return res;
 }
 
-void remove_stack(Stack *stack)
+void DeleteStack(Stack *ParameterStack)
 {
 	StackNode sn;
-	while(!isEmpty_stack(stack)) {
-		sn = pop(stack);
-		print_stack_node(&sn);
+	while(!StackIsEmpty(ParameterStack)) {
+		sn = PopStackNode(ParameterStack);
+		PrintStackNode(&sn);
 	}
 }

@@ -22,7 +22,7 @@ void CheckAndGetChar(char tmp)
 }
 
 /** \brief
- * push data in the stack with the method of post-fix
+ * PushStackNode data in the ParameterStack with the method of post-fix
  * calculate addition and subtraction
  */
 double sum()
@@ -36,21 +36,21 @@ double sum()
 			DataNumber.Operation = '+';
 			CheckAndGetChar('+');
 			temp += term();
-			push(st, DataNumber, TRUE);
+			PushStackNode(st, DataNumber, TRUE);
 		}
 		else if(token == '-')
 		{
 			DataNumber.Operation = '-';
 			CheckAndGetChar('-');
 			temp -= term();
-			push(st, DataNumber, TRUE);
+			PushStackNode(st, DataNumber, TRUE);
 		}
 	}
 	return temp;
 }
 
 /** \brief
- * push data in the stack with the method of post-fix
+ * PushStackNode data in the ParameterStack with the method of post-fix
  * calculate multiple and devision
  */
 double term()
@@ -64,21 +64,21 @@ double term()
 			DataNumber.Operation = '*';
 			CheckAndGetChar('*');
 			temp *= factor();
-			push(st, DataNumber, TRUE);
+			PushStackNode(st, DataNumber, TRUE);
 		}
 		else if(token == '/')
 		{
 			DataNumber.Operation = '/';
 			CheckAndGetChar('/');
 			temp /= factor();
-			push(st, DataNumber, TRUE);
+			PushStackNode(st, DataNumber, TRUE);
 		}
 	}
 	return temp;
 }
 
 /** \brief
- * push data in the stack with the method of post-fix
+ * PushStackNode data in the ParameterStack with the method of post-fix
  * regards factor as a number
  */
 double factor()
@@ -98,7 +98,7 @@ double factor()
 		CheckAndGetChar('-');
 		DataNumber.Operation = '-';
 		temp = -factor();
-		push(st, DataNumber, TRUE);
+		PushStackNode(st, DataNumber, TRUE);
 		return temp;
 	}
 	else if(token == '+')
@@ -112,7 +112,7 @@ double factor()
 		ungetc(token, stdin);
 		scanf("%lf", &temp);
 		DataNumber.Number = temp;
-		push(st, DataNumber, FALSE);
+		PushStackNode(st, DataNumber, FALSE);
 		token = getchar();
 	}
 	else GotError();

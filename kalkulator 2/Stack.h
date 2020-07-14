@@ -15,12 +15,12 @@ typedef struct Stack
 	StackNode *topNode;
 } Stack;
 
-int isEmpty_stack(Stack *stack);
-StackNode* make_stack_node();
-Stack* make_stack();
-void print_stack_node(StackNode*);
-void push(Stack *stack, Data DataNumber, int key);
-StackNode pop(Stack *stack);
-void remove_stack(Stack *stack);
+int StackIsEmpty(Stack *ParameterStack);
+StackNode* CreateStackNode();
+Stack* CreateStack();
+void PrintStackNode(StackNode*);
+void PushStackNode(Stack *ParameterStack, Data DataNumber, int key);
+StackNode PopStackNode(Stack *ParameterStack);
+void DeleteStack(Stack *ParameterStack);
 
 #endif // STACK_H_INCLUDED

@@ -20,26 +20,26 @@ int main()
 	NodeOfTree *tn = NULL;
 	/// make info structures for each cases
 	root = CreateRootNode();
-	st = make_stack();
+	st = CreateStack();
 	
 	printf("Masukan Angka dan operasi bilangan contoh : ((1+2)*(3-4)) :\n");
 
 	/// process
     token = getchar();
     value = sum();
-	// now, stack is already built
+	// now, ParameterStack is already built
 
 	/// construct tree
-	while(!isEmpty_stack(st))
+	while(!StackIsEmpty(st))
 	{
-		// As the stack is being removed, constructs tree
-		tmp = pop(st);
+		// As the ParameterStack is being removed, constructs tree
+		tmp = PopStackNode(st);
 		while(tmp.key)
 		{
 			// operator
 			tn = make_child(tn, tmp.info, tmp.key);
 			if(root->root == NULL)	root->root = tn;
-			tmp = pop(st);
+			tmp = PopStackNode(st);
 		}
 		// number
 		tn = make_child(tn, tmp.info, tmp.key);
