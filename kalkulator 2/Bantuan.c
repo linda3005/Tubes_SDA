@@ -22,7 +22,7 @@ void CheckAndGetChar(char tmp)
 }
 
 /** \brief
- * PushStackNode data in the Stack with the method of post-fix
+ * Push data in the Stack with the method of post-fix
  * calculate addition and subtraction
  */
 double sum()
@@ -50,7 +50,7 @@ double sum()
 }
 
 /** \brief
- * PushStackNode data in the Stack with the method of post-fix
+ * Push data in the Stack with the method of post-fix
  * calculate multiple and devision
  */
 double term()
