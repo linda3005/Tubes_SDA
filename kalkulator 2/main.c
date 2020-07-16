@@ -23,14 +23,7 @@ int main()
 	root = CreateRootNode();
 	st = CreateStack();
 	
-	printf("Kalkulator Matematika (Prefix, Postfix, Infix)\n");
-	printf("Develope By:\n");
-	printf("1. Linda Damayanti");
-	printf("\n2. Muhammad Hargi Muttaqin");
-	printf("\n Jangan gunakan tanda pangkat karena masih belum bisa");
-	printf("\n Untuk Lanjut Pencet Y");
-	scanf("%c",&Menu);
-	if(Menu=='y'){
+	
 	
 	do{
 	system("cls");
@@ -73,7 +66,7 @@ int main()
     
     printf("Ulangi Program? y/n \n");
     scanf("%c",&Pengulangan);
-    if(Pengulangan=='y'){
+    if(Pengulangan=='y'||Pengulangan=='Y'){
 	}
 	else{
 		exit(1);
@@ -84,5 +77,4 @@ int main()
 	
     return 0;
 
-}
 }
