@@ -31,7 +31,7 @@ int main()
 	
 	while(!StackIsEmpty(st))
 	{
-		// As the stack is being removed, constructs tree
+		// Mengeluarkan dari stack dan memasukan ke tree
 		tmp = PopStackNode(st);
 		while(tmp.key)
 		{
@@ -45,20 +45,20 @@ int main()
 		if(root->root == NULL)	root->root = tn;
 	}
 	
-    /// printing
+    /// Print
     printf("prefix : ");
-    AllTraversal(root, PREORDER);//prefix
+    AllTraversal(root, PREORDER);
     printf("\n");
     printf("infix : ");
-    AllTraversal(root, INORDER);//infix
+    AllTraversal(root, INORDER);
     printf("\n");
     printf("postfix : ");
-    AllTraversal(root, POSTORDER);//postfix
+    AllTraversal(root, POSTORDER);
     printf("\n");
-    printf("Evaluation result : %g\n", value);
+    printf("Hasil kalkulasi : %g\n", value);
     printf("");
 
-    /// delete
+    //Menghapus Tree
     DeleteAllNodeTree(root);
     
     printf("Ulangi Program? y/n \n");
