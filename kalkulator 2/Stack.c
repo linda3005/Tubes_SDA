@@ -23,7 +23,7 @@ Stack* CreateStack()
 {
 	Stack *tmp = (Stack*)calloc(sizeof(Stack), 1);
 	if(!tmp) {
-		printf("\nmemory dalam kondisi penuh.");
+		printf("\nkondisi memori penuh.");
 		exit(1);
 	}
 	return tmp;
