@@ -3,7 +3,7 @@
 int StackIsEmpty(Stack *ParameterStack)
 {
 	if(!ParameterStack) {
-		printf("\nthe stack doesn't exist.");
+		printf("\nStack tidak ada");
 		return TRUE;
 	}
 	return ParameterStack->topNode == NULL;
@@ -13,7 +13,7 @@ StackNode* CreateStackNode()
 {
 	StackNode *tmp = (StackNode*)calloc(sizeof(StackNode), 1);
 	if(!tmp){
-		printf("\nmemory is full-using.");
+		printf("\nmemory dalam kondisi penuh.");
 		exit(1);
 	}
 	return tmp;
@@ -23,7 +23,7 @@ Stack* CreateStack()
 {
 	Stack *tmp = (Stack*)calloc(sizeof(Stack), 1);
 	if(!tmp) {
-		printf("\nmemory is full-using.");
+		printf("\nmemory dalam kondisi penuh.");
 		exit(1);
 	}
 	return tmp;
