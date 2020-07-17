@@ -1,5 +1,5 @@
-#ifndef BANTUAN_H_INCLUDED
-#define BANTUAN_H_INCLUDED
+#ifndef KALKULATOR_H_INCLUDED
+#define KALKULATOR_H_INCLUDED
 
 
 #include <stdlib.h>

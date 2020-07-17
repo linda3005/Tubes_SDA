@@ -1,7 +1,7 @@
 #include "Tree.h"
 
 Root* CreateRootNode(){
-	Root* tmp = (Root*)calloc(sizeof(Root), 1);
+	Root* tmp = (Root*)calloc(sizeof(Root), 1);//True;
 	if(!tmp){
 		puts("Memori dalam kondisi penuh\n.");
 		exit(1);
@@ -10,7 +10,7 @@ Root* CreateRootNode(){
 }
 
 NodeOfTree* CreateTreeNode(){
-	NodeOfTree* tmp = (NodeOfTree*)calloc(sizeof(NodeOfTree), 1);
+	NodeOfTree* tmp = (NodeOfTree*)calloc(sizeof(NodeOfTree), 1)//True;
 	if(!tmp){
 		puts("Memori dalam kondisi penuh\n.");
 		exit(1);

@@ -61,7 +61,7 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit2]
-FileName=Bantuan.h
+FileName=Kalkulator.h
 CompileCpp=0
 Folder=
 Compile=1
@@ -111,7 +111,7 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit7]
-FileName=Bantuan.c
+FileName=Kalkulator.c
 CompileCpp=0
 Folder=
 Compile=1
