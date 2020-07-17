@@ -1,9 +1,8 @@
 #ifndef TREE_H_INCLUDED
 #define TREE_H_INCLUDED
-#include "Bantuan.h"
+#include "Kalkulator.h"
 
-typedef struct NodeOfTree
-{
+typedef struct NodeOfTree{
 	int key;
 	Data info;
 	struct NodeOfTree *parent;
@@ -11,8 +10,7 @@ typedef struct NodeOfTree
 	struct NodeOfTree *right;
 } NodeOfTree;
 
-typedef struct Root
-{
+typedef struct Root{
 	NodeOfTree *root;
 } Root;
 

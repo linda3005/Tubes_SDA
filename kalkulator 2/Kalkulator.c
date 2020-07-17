@@ -1,4 +1,4 @@
-#include "Bantuan.h"
+#include "Kalkulator.h"
 #include "Stack.h"
 #include "Tree.h"
 
@@ -7,39 +7,32 @@ char token; // variable for reading a charactor
 Root *root;
 Stack *st;
 
-void GotError()
-{
-	puts("error found.\nplease check your input message.");
+void GotError(){
+	puts("Error.\nperiksa kembali masukan anda.");
 	exit(1);
 }
 
-void CheckAndGetChar(char tmp)
-{
+void CheckAndGetChar(char tmp){
 	if(tmp != token){
 		GotError();
 	}
 	token = getchar();
 }
 
-/** \brief
- * Push data in the Stack with the method of post-fix
- * calculate addition and subtraction
+/* Push data stack dengan metode postfix 
+ * Menghitung operasi penjumlahan dan pengurangan
  */
-double sum()
-{
+double sum(){
 	double temp = term();
 	Data DataNumber;
-	while(token == '+' || token == '-')
-	{
-		if(token == '+')
-		{
+	while(token == '+' || token == '-'){
+		if(token == '+'){
 			DataNumber.Operation = '+';
 			CheckAndGetChar('+');
 			temp += term();
 			PushStackNode(st, DataNumber, TRUE);
 		}
-		else if(token == '-')
-		{
+		else if(token == '-'){
 			DataNumber.Operation = '-';
 			CheckAndGetChar('-');
 			temp -= term();
@@ -49,25 +42,18 @@ double sum()
 	return temp;
 }
 
-/** \brief
- * Push data in the Stack with the method of post-fix
- * calculate multiple and devision
- */
-double term()
-{
+//Menghitung operasi perkalian dan pembagian
+double term(){
 	double temp = factor();
 	Data DataNumber;
-	while(token == '*' || token == '/')
-	{
-		if(token == '*')
-		{
+	while(token == '*' || token == '/'){
+		if(token == '*'){
 			DataNumber.Operation = '*';
 			CheckAndGetChar('*');
 			temp *= factor();
 			PushStackNode(st, DataNumber, TRUE);
 		}
-		else if(token == '/')
-		{
+		else if(token == '/'){
 			DataNumber.Operation = '/';
 			CheckAndGetChar('/');
 			temp /= factor();
@@ -77,38 +63,29 @@ double term()
 	return temp;
 }
 
-/** \brief
- * PushStackNode data in the Stack with the method of post-fix
- * regards factor as a number
- */
-double factor()
-{
+//menganggap faktor sebagai angka
+double factor(){
 	double temp = 0.0;
 	Data DataNumber;
-	if(token == '(')
-	{
-		// start with new sum again
+	if(token == '('){
+		// dimuali dengan sum lagi
 		CheckAndGetChar('(');
 		temp = sum();
 		CheckAndGetChar(')');
 	}
-	else if(token == '-')
-	{
-		// negation
+	else if(token == '-'){
+		// negasi
 		CheckAndGetChar('-');
 		DataNumber.Operation = '-';
 		temp = -factor();
 		PushStackNode(st, DataNumber, TRUE);
 		return temp;
 	}
-	else if(token == '+')
-	{
-		// there is no meaning, but just exception dealing
+	else if(token == '+'){
 		CheckAndGetChar('+');
 		return factor();
 	}
-	else if(isdigit(token))
-	{
+	else if(isdigit(token)){
 		ungetc(token, stdin);
 		scanf("%lf", &temp);
 		DataNumber.Number = temp;
@@ -118,5 +95,3 @@ double factor()
 	else GotError();
 	return temp;
 }
-
-
