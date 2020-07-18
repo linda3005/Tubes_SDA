@@ -101,9 +101,9 @@ double powerof(){
 	double temp=term();
 	Data DataNumber;
 	
-	if(token == '#'){
-		CheckAndGetChar('#');
-		DataNumber.Operation = '#';
+	if(token == 'v'){
+		CheckAndGetChar('v');
+		DataNumber.Operation = 'v';
 		temp=sqrt(factor());
 		PushStackNode(st, DataNumber, TRUE);
 	}
