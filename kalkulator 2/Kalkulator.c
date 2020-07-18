@@ -95,3 +95,27 @@ double factor(){
 	else GotError();
 	return temp;
 }
+
+double powerof(){
+	double temp;
+	Data DataNumber;
+	
+	if(token == '#'){
+		CheckAndGetChar('#');
+		DataNumber.Operation = '#';
+		temp=sqrt(factor());
+		PushStackNode(st, DataNumber, TRUE);
+	}
+	else{
+		temp = factor ();
+	}
+	while(token== '^'){//cek untuk operasi pangkat
+		if(token== '^'){
+			DataNumber.Operation= '^';
+			CheckAndGetChar('^');
+			temp=pow(temp,factor());
+			PushStackNode(st,DataNumber,TRUE);
+		}
+	}
+	return temp;
+}

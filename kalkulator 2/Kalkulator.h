@@ -4,6 +4,7 @@
 
 #include <stdlib.h>
 #include <stdio.h>
+#include <math.h>
 
 #define PREORDER	0
 #define INORDER		1
@@ -22,6 +23,7 @@ typedef union
 double term();
 double sum();
 double factor();
+double powerof();
 void CheckAndGetChar(char tmp);
 void GotError();
 void Menu();

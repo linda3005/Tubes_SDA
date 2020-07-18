@@ -1,6 +1,7 @@
 #include "Tree.h"
 #include "Stack.h"
 #include "Kalkulator.h"
+#include <math.h>
 
 
 
