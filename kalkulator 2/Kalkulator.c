@@ -48,7 +48,7 @@ double sum(){
 
 //Menghitung operasi perkalian dan pembagian
 double term(){
-	double temp = factor();
+	double temp = powerof();
 	Data DataNumber;
 	while(token == '*' || token == '/'){
 		if(token == '*'){
@@ -102,7 +102,7 @@ double factor(){
 
 
 double powerof(){
-	double temp=term();
+	double temp=factor();
 	Data DataNumber;
 	
 	if(token == 'v'){
@@ -111,11 +111,8 @@ double powerof(){
 		temp=sqrt(factor());
 		PushStackNode(st, DataNumber, TRUE);
 	}
-	else{
-		temp = factor ();
-	}
-	while(token== '^'){//cek untuk operasi pangkat
-		if(token== '^'){
+	while(token == '^'){//cek untuk operasi pangkat
+		if(token == '^'){
 			DataNumber.Operation= '^';
 			CheckAndGetChar('^');
 			temp=pow(temp,factor());
