@@ -14,13 +14,15 @@ int main(){
 	char Pengulangan;
 	double value;
 	StackNode tmp;
+	
 	do{
 	NodeOfTree *tn = NULL;
 	root = CreateRootNode();
 	st = CreateStack();
 	
-	printf("Masukan Angka dan operasi bilangan contoh : ((1+2)*(3-4))\n");
-
+	printf("Masukan Angka dan operasi bilangan contoh : \n((1+2)*(3-4))\n");
+	printf("Made by : Linda Damayanti, Muhammad Hargi Muttaqin\n");
+	printf("Masukkan Angka : \n");
     token = getchar();
     value = sum();
 	
