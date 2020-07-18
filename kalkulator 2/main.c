@@ -20,11 +20,12 @@ int main(){
 	NodeOfTree *tn = NULL;
 	root = CreateRootNode();
 	st = CreateStack();
-	printf("|==============================================================|\n");
-    printf("|Program Kalkulator By Linda Damayanti, Muhammad Hargi Muttaqin|\n");
-    printf("|==============================================================|\n\n");
-	printf("Masukan Angka dan operasi bilangan contoh : \n((1+2)*(3-4))\nJangan gunakan perpangkatan\n");
-	printf("Masukkan Angka : \n");
+	system("color 57");
+	printf("\t\t\t|==============================================================|\n");
+    printf("\t\t\t|Program Kalkulator By Linda Damayanti, Muhammad Hargi Muttaqin|\n");
+    printf("\t\t\t|==============================================================|\n\n");
+	printf("\t\t\tMasukan Angka dan operasi bilangan contoh : \n\t\t\t((1+2)*(3-4))\n\t\t\tJangan gunakan perpangkatan\n");
+	printf("\t\t\tMasukkan Angka : \n");
     token = getchar();
     value = sum();
 	
@@ -43,23 +44,23 @@ int main(){
 	}
 	
     /// Print
-    printf("prefix : ");
+    printf("\t\t\tprefix : ");
     AllTraversal(root, PREORDER);
     printf("\n");
-    printf("infix : ");
+    printf("\t\t\tinfix : ");
     AllTraversal(root, INORDER);
     printf("\n");
-    printf("postfix : ");
+    printf("\t\t\tpostfix : ");
     AllTraversal(root, POSTORDER);
     printf("\n");
-    printf("Hasil kalkulasi : %g\n", value);
+    printf("\t\t\tHasil kalkulasi : %g\n", value);
     printf("");
 
     //Menghapus Tree
      DeleteAllNodeTree(root);
     
     //Perulangan Aplikasi (?)
-    printf("Ulangi Program? y/n \n");
+    printf("\t\t\tUlangi Program? y/n \n");
     scanf("%c",&Pengulangan);
    
     if(Pengulangan=='y'||Pengulangan=='Y'){
