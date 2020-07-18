@@ -20,9 +20,10 @@ int main(){
 	NodeOfTree *tn = NULL;
 	root = CreateRootNode();
 	st = CreateStack();
-	
-	printf("Masukan Angka dan operasi bilangan contoh : \n((1+2)*(3-4))\n");
-	printf("Made by : Linda Damayanti, Muhammad Hargi Muttaqin\n");
+	printf("|==============================================================|\n");
+    printf("|Program Kalkulator By Linda Damayanti, Muhammad Hargi Muttaqin|\n");
+    printf("|==============================================================|\n\n");
+	printf("Masukan Angka dan operasi bilangan contoh : \n((1+2)*(3-4))\nJangan gunakan perpangkatan\n");
 	printf("Masukkan Angka : \n");
     token = getchar();
     value = sum();
