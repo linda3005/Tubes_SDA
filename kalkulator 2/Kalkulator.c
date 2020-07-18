@@ -96,56 +96,27 @@ double factor(){
 	return temp;
 }
 
-double akarPangkat()
-{
-//	double temp = factor();
-	double temp;
+
+double powerof(){
+	double temp=term();
 	Data DataNumber;
 	
-	if(token == 'a')
-	{
-		CheckAndGetChar('a');
-		DataNumber.Operation = 'a';
-		temp = sqrt(factor());
-		PushStackNode(st, DataNumber, 1);
+	if(token == '#'){
+		CheckAndGetChar('#');
+		DataNumber.Operation = '#';
+		temp=sqrt(factor());
+		PushStackNode(st, DataNumber, TRUE);
 	}
-	else
-	{
-		temp = factor();
+	else{
+		temp = factor ();
 	}
-	while(token == '^')
-	{
-		if(token == '^')
-		{
-			DataNumber.Operation = '^';
+	while(token== '^'){//cek untuk operasi pangkat
+		if(token== '^'){
+			DataNumber.Operation= '^';
 			CheckAndGetChar('^');
-			temp = pow(temp, factor());
-			PushStackNode(st, DataNumber, 1);
+			temp=pow(temp,factor());
+			PushStackNode(st,DataNumber,TRUE);
 		}
 	}
 	return temp;
 }
-
-//double powerof(){
-//	double temp=term();
-//	Data DataNumber;
-//	
-//	if(token == '#'){
-//		CheckAndGetChar('#');
-//		DataNumber.Operation = '#';
-//		temp=sqrt(factor());
-//		PushStackNode(st, DataNumber, TRUE);
-//	}
-//	else{
-//		temp = factor ();
-//	}
-//	while(token== '^'){//cek untuk operasi pangkat
-//		if(token== '^'){
-//			DataNumber.Operation= '^';
-//			CheckAndGetChar('^');
-//			temp=pow(temp,factor());
-//			PushStackNode(st,DataNumber,TRUE);
-//		}
-//	}
-//	return temp;
-//}

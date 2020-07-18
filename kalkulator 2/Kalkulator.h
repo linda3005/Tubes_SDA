@@ -23,8 +23,7 @@ typedef union
 double term();
 double sum();
 double factor();
-double akarPangkat();
-//double powerof();
+double powerof();
 void CheckAndGetChar(char tmp);
 void GotError();
 void Menu();
