@@ -1,6 +1,7 @@
 #ifndef TREE_H_INCLUDED
 #define TREE_H_INCLUDED
 #include "Kalkulator.h"
+#include <math.h>
 
 typedef struct NodeOfTree{
 	int key;
