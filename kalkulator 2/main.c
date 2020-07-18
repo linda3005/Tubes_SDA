@@ -5,22 +5,23 @@
 
 
 
+
 char token; // variabel untuk membaca karakter 
 Root *root;
 Stack *st;
 
 
 int main(){
-
 	char Pengulangan;
 	double value;
 	StackNode tmp;
-	
+	system("color 57");
 	do{
 	NodeOfTree *tn = NULL;
 	root = CreateRootNode();
 	st = CreateStack();
-	system("color 57");
+	loading(30,12);
+	system("cls");
 	printf("\t\t\t|==============================================================|\n");
     printf("\t\t\t|Program Kalkulator By Linda Damayanti, Muhammad Hargi Muttaqin|\n");
     printf("\t\t\t|==============================================================|\n\n");
@@ -71,9 +72,10 @@ int main(){
 	}
 
     fflush(stdin);
-}
-	
+    system("COLOR 9C");
+}	
  	while (1);
     return 0;
 
 }
+

@@ -22,5 +22,7 @@ void PrintStackNode(StackNode*);
 void PushStackNode(Stack *ParameterStack, Data DataNumber, int key);
 StackNode PopStackNode(Stack *ParameterStack);
 void DeleteStack(Stack *ParameterStack);
+void gotoxy(int x,int y);
+void loading(int x,int y);
 
 #endif // STACK_H_INCLUDED
