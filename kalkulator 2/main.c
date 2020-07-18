@@ -15,10 +15,11 @@ int main(){
 	char Menu;
 	double value;
 	StackNode tmp;
+	do{
 	NodeOfTree *tn = NULL;
 	root = CreateRootNode();
 	st = CreateStack();
-	do{
+	
 	printf("Masukan Angka dan operasi bilangan contoh : ((1+2)*(3-4))\n");
 
     token = getchar();
