@@ -86,7 +86,7 @@ double factor(){
 		return factor();
 	}
 	else if(isdigit(token)){
-		ungetc(token, stdin);
+		ungetc(token, stdin);//untuk mereplace input (token)
 		scanf("%lf", &temp);
 		DataNumber.Number = temp;
 		PushStackNode(st, DataNumber, FALSE);
