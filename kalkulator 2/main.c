@@ -59,7 +59,7 @@ int main(){
     //Menghapus Tree
      DeleteAllNodeTree(root);
     
-    //Perulangan Aplikasi (?)
+    //Pengulangan aplikasi jika diperlukan
     printf("\t\t\tUlangi Program? y/n \n");
     scanf("%c",&Pengulangan);
    
