@@ -27,5 +27,8 @@ double powerof();
 void CheckAndGetChar(char tmp);
 void GotError();
 void Menu();
+//===============================================UI==================================/
+void gotoxy(int x,int y);
+void loading(int x,int y);
 
 #endif // BANTUAN_H_INCLUDED

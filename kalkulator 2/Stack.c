@@ -1,7 +1,4 @@
 #include "Stack.h"
-#include<conio.h>
-#include<windows.h>
-#include<stdio.h>
 
 int StackIsEmpty(Stack *ParameterStack)
 {
@@ -72,37 +69,4 @@ void DeleteStack(Stack *ParameterStack)
 		PrintStackNode(&sn);
 	}
 }
-gotoxy(int x,int y){
-	
-	HANDLE handle;
-	COORD coord;
-	coord.X =x;
-	coord.Y =y;
-	handle  = GetStdHandle(STD_OUTPUT_HANDLE);
-	SetConsoleCursorPosition(handle,coord);
-}
-void loading(int x,int y){
-	system("cls");
-	int i;
-	gotoxy(x,y-1);printf("Loading...");
-	
-	
-	for(i=x;i<=x+19;i++){
-	    gotoxy(i,y);printf("%c",196);
-		gotoxy(i,y+1);printf("%c",196);	
-	}
-	for(i=y;i<=y+1;i++){
-	    gotoxy(x,i);printf("%c",179);
-		gotoxy(x+19,i);printf("%c",179);	
-	}
-	gotoxy(x,y);printf("%c",218);
-	gotoxy(x+19,y);printf("%c",191);
-	gotoxy(x,y+1);printf("%c",192);
-	gotoxy(x+19,y+1);printf("%c",217);
-	for ( i = x; i<=x+19;i++){
-		gotoxy(i,y);printf("%c",220);
-		gotoxy(i,y+1);printf("%c",223);
-		Sleep(20);
-	}
-	system("cls");
-}
+
