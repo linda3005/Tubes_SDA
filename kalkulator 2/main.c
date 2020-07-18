@@ -12,7 +12,6 @@ Stack *st;
 int main(){
 
 	char Pengulangan;
-	char Menu;
 	double value;
 	StackNode tmp;
 	do{
