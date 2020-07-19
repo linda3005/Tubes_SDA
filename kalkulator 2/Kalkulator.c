@@ -132,6 +132,7 @@ gotoxy(int x,int y){
 	SetConsoleCursorPosition(handle,coord);
 }
 void loading(int x,int y){
+	system("COLOR 70");
 	system("cls");
 	int i;
 	gotoxy(x,y-1);printf("Loading...");

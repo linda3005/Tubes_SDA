@@ -15,12 +15,12 @@ int main(){
 	char Pengulangan;
 	double value;
 	StackNode tmp;
+	loading(30,12);
 	system("color 57");
 	do{
 	NodeOfTree *tn = NULL;
 	root = CreateRootNode();
 	st = CreateStack();
-	loading(30,12);
 	system("cls");
 	printf("\t\t\t|==============================================================|\n");
     printf("\t\t\t|Program Kalkulator By Linda Damayanti, Muhammad Hargi Muttaqin|\n");
