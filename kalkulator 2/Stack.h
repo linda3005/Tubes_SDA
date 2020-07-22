@@ -8,6 +8,7 @@
 //Berfungsi sebagai inputan dari user setelah itu akan di pop menuju ADT Kalkulator dan ADT Stack
 //Dan sebagai alokasi memori bagi stack sendiri.
 
+//menampung data setiap node pada stack
 typedef struct StackNode
 {
 	int key;
@@ -15,6 +16,7 @@ typedef struct StackNode
 	struct StackNode *pNode;
 } StackNode;
 
+//menampung data Stack
 typedef struct Stack
 {
 	StackNode *topNode;

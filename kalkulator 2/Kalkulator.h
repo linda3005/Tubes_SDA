@@ -18,20 +18,20 @@
 #define TRUE		1
 #define FALSE	 	0
 
+//sebagai tokenize untuk ADT Tree dan ADT Stack
 typedef union
 {
 	double Number;
 	char Operation;
 } Data;
 
-
+//sebagai fungsi-fungsi operasi dalam kalulator
 double term();
 double sum();
 double factor();
 double powerof();
 void CheckAndGetChar(char tmp);
 void GotError();
-void Menu();
 //===============================================UI==================================/ by Hargi dan Sakhi
 void gotoxy(int x,int y);
 void loading(int x,int y);
