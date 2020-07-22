@@ -2,6 +2,11 @@
 #include "Stack.h"
 #include "Tree.h"
 
+
+//Compiler : Dev-C++ 5.1
+////Author : linda Damayanti & Muhammad Hargi Muttaqin.
+//Berfungsi sebagai Penghitungan kalkulator secara infix.
+
 #include<conio.h>
 #include<windows.h>
 #include<stdio.h>
@@ -121,7 +126,7 @@ double powerof(){
 	}
 	return temp;
 }
-//==================================UI=======================================//
+//==================================UI=======================================// by Hargi dan Sakhi
 gotoxy(int x,int y){
 	
 	HANDLE handle;

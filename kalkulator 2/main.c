@@ -5,6 +5,9 @@
 
 
 
+//Compiler : Dev-C++ 5.1
+//Author : Muhammad Hargi Muttaqin
+//Berfungsi sebagai main program dari kalukaltor yang memanggil ADT Stack,ADT Kalkulator, dan ADT Tree
 
 char token; // variabel untuk membaca karakter 
 Root *root;

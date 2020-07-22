@@ -1,4 +1,8 @@
 #include "Stack.h"
+//Compiler : Dev-C++ 5.1
+//Author : Muhammad Hargi Muttaqin
+//Berfungsi sebagai inputan dari user setelah itu akan di pop menuju ADT Kalkulator dan ADT Stack
+//Dan sebagai alokasi memori bagi stack sendiri.
 
 int StackIsEmpty(Stack *ParameterStack)
 {
@@ -29,16 +33,16 @@ Stack* CreateStack()
 	return tmp;
 }
 
-void PrintStackNode(StackNode *TreeNode)
-{
-	if(!TreeNode)	return;
-	if(TreeNode->key){
-		printf("%c", TreeNode->info.Operation);
-	}
-	else{
-		printf("%g", TreeNode->info.Number);
-	}
-}
+//void PrintStackNode(StackNode *TreeNode)
+//{
+//	if(!TreeNode)	return;
+//	if(TreeNode->key){
+//		printf("%c", TreeNode->info.Operation);
+//	}
+//	else{
+//		printf("%g", TreeNode->info.Number);
+//	}
+//}
 
 void PushStackNode(Stack *ParameterStack, Data DataNumber, int key)
 {
@@ -61,12 +65,12 @@ StackNode PopStackNode(Stack *ParameterStack)
 	return res;
 }
 
-void DeleteStack(Stack *ParameterStack)
-{
-	StackNode sn;
-	while(!StackIsEmpty(ParameterStack)) {
-		sn = PopStackNode(ParameterStack);
-		PrintStackNode(&sn);
-	}
-}
+//void DeleteStack(Stack *ParameterStack)
+//{
+//	StackNode sn;
+//	while(!StackIsEmpty(ParameterStack)) {
+//		sn = PopStackNode(ParameterStack);
+//		//PrintStackNode(&sn);
+//	}
+//}
 

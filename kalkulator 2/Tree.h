@@ -3,6 +3,11 @@
 #include "Kalkulator.h"
 #include <math.h>
 
+//Compiler : Dev-C++ 5.1
+////Author : linda Damayanti
+//Berfungsi sebagai ekspresi Tree yaitu prefix, infix dan postfix
+
+
 typedef struct NodeOfTree{
 	int key;
 	Data info;

@@ -1,5 +1,10 @@
 #include "Tree.h"
 
+
+//Compiler : Dev-C++ 5.1
+////Author : linda Damayanti
+//Berfungsi sebagai ekspresi Tree yaitu prefix, infix dan postfix
+
 Root* CreateRootNode(){
 	Root* tmp = (Root*)calloc(sizeof(Root), 1);//True;
 	if(!tmp){
@@ -10,7 +15,7 @@ Root* CreateRootNode(){
 }
 
 NodeOfTree* CreateTreeNode(){
-	NodeOfTree* tmp = (NodeOfTree*)calloc(sizeof(NodeOfTree), 1)//True;
+	NodeOfTree* tmp = (NodeOfTree*)calloc(sizeof(NodeOfTree), 1);//True;
 	if(!tmp){
 		puts("Memori dalam kondisi penuh\n.");
 		exit(1);

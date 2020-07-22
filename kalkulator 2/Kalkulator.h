@@ -1,6 +1,11 @@
 #ifndef KALKULATOR_H_INCLUDED
 #define KALKULATOR_H_INCLUDED
 
+//Compiler : Dev-C++ 5.1
+////Author : linda Damayanti & Muhammad Hargi Muttaqin.
+//Berfungsi sebagai Penghitungan kalkulator secara infix.
+
+
 
 #include <stdlib.h>
 #include <stdio.h>
@@ -27,7 +32,7 @@ double powerof();
 void CheckAndGetChar(char tmp);
 void GotError();
 void Menu();
-//===============================================UI==================================/
+//===============================================UI==================================/ by Hargi dan Sakhi
 void gotoxy(int x,int y);
 void loading(int x,int y);
 
