@@ -11,7 +11,7 @@
 //menampung data setiap node pada stack
 typedef struct StackNode
 {
-	int key;
+	int key;//true atau false
 	Data info;
 	struct StackNode *pNode;
 } StackNode;
@@ -25,9 +25,7 @@ typedef struct Stack
 int StackIsEmpty(Stack *ParameterStack);
 StackNode* CreateStackNode();
 Stack* CreateStack();
-//void PrintStackNode(StackNode*);
 void PushStackNode(Stack *ParameterStack, Data DataNumber, int key);
 StackNode PopStackNode(Stack *ParameterStack);
-//void DeleteStack(Stack *ParameterStack);
 
 #endif // STACK_H_INCLUDED

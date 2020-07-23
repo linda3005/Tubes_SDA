@@ -33,17 +33,6 @@ Stack* CreateStack()
 	return tmp;
 }
 
-//void PrintStackNode(StackNode *TreeNode)
-//{
-//	if(!TreeNode)	return;
-//	if(TreeNode->key){
-//		printf("%c", TreeNode->info.Operation);
-//	}
-//	else{
-//		printf("%g", TreeNode->info.Number);
-//	}
-//}
-
 void PushStackNode(Stack *ParameterStack, Data DataNumber, int key)
 {
 	StackNode *tmp = CreateStackNode();
@@ -64,13 +53,3 @@ StackNode PopStackNode(Stack *ParameterStack)
 	free(tmp);
 	return res;
 }
-
-//void DeleteStack(Stack *ParameterStack)
-//{
-//	StackNode sn;
-//	while(!StackIsEmpty(ParameterStack)) {
-//		sn = PopStackNode(ParameterStack);
-//		//PrintStackNode(&sn);
-//	}
-//}
-
